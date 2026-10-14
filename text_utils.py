@@ -24,3 +24,14 @@ def word_frequency(text):
             frequency[word] = 1
 
     return frequency
+
+
+def most_frequent_word(text):
+    frequency = word_frequency(text)
+
+    if not frequency:
+        return None, 0
+
+    word = max(frequency, key=frequency.get)
+
+    return word, frequency[word]
