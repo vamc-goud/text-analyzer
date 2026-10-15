@@ -35,3 +35,19 @@ def most_frequent_word(text):
     word = max(frequency, key=frequency.get)
 
     return word, frequency[word]
+
+
+def word_percentages(text):
+    frequency = word_frequency(text)
+    total = sum(frequency.values())
+
+    percentages = {}
+
+    if total == 0:
+        return percentages
+
+    for word, count in frequency.items():
+        percentage = (count / total) * 100
+        percentages[word] = percentage
+
+    return percentages
