@@ -1,8 +1,10 @@
 import string
 
 def count_words(text):
-    return len(text.split())
-
+    translator = str.maketrans("", "", string.punctuation)
+    cleaned_text = text.lower().translate(translator)
+    words = cleaned_text.split()
+    return len(words)
 
 def count_characters(text):
     return len(text)
@@ -64,4 +66,39 @@ def longest_and_shortest_words(text):
     shortest = min(words, key=len)
 
     return longest, shortest
+
+
+
+import re
+
+def count_sentences(text):
+    # Split text at sentence-ending punctuation.
+    parts = re.split(r"[.!?]+", text)
+
+    # Keep only parts containing at least one word character.
+    sentences = [
+        part for part in parts
+        if re.search(r"\w", part)
+    ]
+
+    return len(sentences)
+
+
+
+
+def average_word_length(text):
+    translator = str.maketrans("", "", string.punctuation)
+    cleaned_text = text.lower().translate(translator)
+    words = cleaned_text.split()
+
+    if not words:
+        return 0
+
+    total_characters = 0
+
+    for word in words:
+        total_characters += len(word)
+
+    return total_characters / len(words)
+
 
