@@ -1,6 +1,10 @@
 from text_utils import count_words, count_characters
-from text_utils import word_frequency, most_frequent_word, word_percentages
-
+from text_utils import (
+    word_frequency,
+    most_frequent_word,
+    word_percentages,
+    longest_and_shortest_words,
+)
 text = input("Enter a sentence: ")
 
 print("Words:", count_words(text))
@@ -22,5 +26,13 @@ print("\nWord percentages:")
 if percentages:
     for word, percentage in percentages.items():
         print(f"{word}: {percentage:.2f}%")
+else:
+    print("No words found.")
+
+longest, shortest = longest_and_shortest_words(text)
+
+if longest is not None:
+    print("Longest word:", longest)
+    print("Shortest word:", shortest)
 else:
     print("No words found.")

@@ -51,3 +51,17 @@ def word_percentages(text):
         percentages[word] = percentage
 
     return percentages
+
+
+def longest_and_shortest_words(text):
+    frequency = word_frequency(text)
+    words = list(frequency.keys())
+
+    if not words:
+        return None, None
+
+    longest = max(words, key=len)
+    shortest = min(words, key=len)
+
+    return longest, shortest
+
