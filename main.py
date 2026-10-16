@@ -10,7 +10,11 @@ from text_utils import (
     average_word_length
 )
 
-text = input("Enter a sentence: ")
+text = input("Enter a sentence: ").strip()
+
+if not text:
+    print("Please enter some text.")
+    raise SystemExit
 
 print("Words:", count_words(text))
 print("Characters:", count_characters(text))
