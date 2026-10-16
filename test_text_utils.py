@@ -68,3 +68,30 @@ class TestTextUtils(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def test_empty_text(self):
+    self.assertEqual(count_words(""), 0)
+    self.assertEqual(word_frequency(""), {})
+    self.assertEqual(average_word_length(""), 0)
+
+def test_spaces_only(self):
+    self.assertEqual(count_words("   "), 0)
+    self.assertEqual(word_frequency("   "), {})
+
+def test_frequency_is_case_insensitive(self):
+    self.assertEqual(
+        word_frequency("Python python PYTHON"),
+        {"python": 3},
+    )
+
+def test_punctuation_is_removed(self):
+    self.assertEqual(
+        word_frequency("Hello, hello!"),
+        {"hello": 2},
+    )
+
+def test_tied_word_frequencies(self):
+    word, count = most_frequent_word("cat dog")
+    self.assertIn(word, ("cat", "dog"))
+    self.assertEqual(count, 1)
