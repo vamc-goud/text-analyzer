@@ -1,63 +1,68 @@
+
 # Text Analyzer
 
-A beginner-friendly Python project that analyzes text and demonstrates core Python programming concepts, including functions, dictionaries, strings, and modular programming.
+A Python command-line application that analyzes text and provides useful statistics, including word counts, character counts, sentence counts, word frequency, and average word length.
 
 ## Features
 
-* Count words in a text.
-* Count characters.
-* Identify word frequencies.
-* Organize code into reusable Python modules.
-* Practice basic text processing.
+- Count words while ignoring punctuation
+- Count characters, including spaces and punctuation
+- Count sentences
+- Calculate average word length
+- Display word frequency
+- Find the most frequent word
+- Calculate word frequency percentages
+- Identify the longest and shortest words
+- Handle empty input
+- Include unit tests using Python's unittest framework
 
 ## Project Structure
 
-```text
 text_analyzer/
 ├── main.py
 ├── text_utils.py
+├── test_text_utils.py
+├── README.md
 ├── requirements.txt
-├── .gitignore
-└── README.md
-```
+└── .gitignore
 
 ## Requirements
 
-* Python 3.10 or later
-* No external packages required if the project uses only Python's standard library.
+- Python 3.10 or later
+- No external packages required for the core application
 
-## How to Run
+## Run the Application
 
-1. Clone or download this repository.
-2. Open a terminal in the project folder.
-3. Run:
+Clone the repository:
 
-```bash
-python main.py
-```
+    git clone https://github.com/vamc-goud/text-analyzer.git
 
-If your system uses the `py` launcher on Windows, you can run:
+Navigate to the project directory:
 
-```powershell
-py main.py
-```
+    cd text-analyzer
 
-## Concepts Practiced
+Run the application:
 
-* Strings and string processing
-* Functions
-* Dictionaries
-* Loops and conditional statements
-* Python modules and imports
-* Git and GitHub version control
+    python main.py
 
-## Future Improvements
+## Run Unit Tests
 
-* Add input validation and error handling.
-* Support text files as input.
-* Add automated unit tests.
-* Generate a report of word frequencies.
+    python -m unittest -v
 
-## Author
+## Example
 
-Vamsi Goud Yekula
+Input:
+
+    Python is easy. Python is powerful!
+
+The application displays statistics such as word count, character count, sentence count, word frequency, and average word length.
+
+## Skills Demonstrated
+
+- Python functions and modules
+- String processing
+- Dictionaries and lists
+- Regular expressions
+- Input validation
+- Unit testing
+- Git and GitHub
